@@ -1,13 +1,7 @@
 import { expect } from "chai";
 
 function fizzBuzz(input: number): string {
-    if (input === 1) {
-        return '1';
-    }
-    if (input === 2) {
-        return '2';
-    }
-    return '4';
+    return input.toString();
 }
 
 describe('Fizz Buzz', () => {
