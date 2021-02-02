@@ -1,7 +1,7 @@
 import { expect } from "chai";
 
 function fizzBuzz(number: number): string {
-
+    return '4';
 }
 
 describe('Fizz Buzz', () => {
