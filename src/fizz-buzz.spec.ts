@@ -1,6 +1,9 @@
 import { expect } from "chai";
 
 function fizzBuzz(number: number): string {
+    if (number === 1) {
+        return '1';
+    }
     return '4';
 }
 
