@@ -16,4 +16,8 @@ describe('Fizz Buzz', () => {
     it('should return "4" when 4', () => {
         expect(fizzBuzz(4)).eql('4');
     });
+
+    it('should return "7" when 7', () => {
+        expect(fizzBuzz(7)).eql('7');
+    });
 });
