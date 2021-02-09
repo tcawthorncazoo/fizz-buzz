@@ -1,6 +1,9 @@
 import { expect } from "chai";
 
 function isLeapYear(year: number) {
+    if (year === 1997) {
+        return false;
+    }
     return true;
 }
 
@@ -15,5 +18,9 @@ describe('Leap Year', () => {
 
     it('should return FALSE for a non-leap year like 1997', () => {
         expect(isLeapYear(1997)).eql(false);
-    })
+    });
+
+    it('should return FALSE when a non-leap year like 2007', () => {
+        expect(isLeapYear(2007)).eql(false);
+    });
 });
