@@ -12,4 +12,8 @@ describe('Leap Year', () => {
     it('should return TRUE for 2000', () => {
         expect(isLeapYear(2000)).eql(true);
     });
+
+    it('should return FALSE for a non-leap year like 1997', () => {
+        expect(isLeapYear(1997)).eql(false);
+    })
 });
