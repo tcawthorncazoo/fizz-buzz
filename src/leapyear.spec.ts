@@ -1,7 +1,7 @@
 import { expect } from "chai";
 
 function isLeapYear(year: number) {
-    if (year === 1900 || year === 2100) {
+    if (year % 100 === 0 && year % 400 !== 0) {
         return false;
     }
     if (year % 4 === 0) {
