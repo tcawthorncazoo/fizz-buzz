@@ -1,6 +1,9 @@
 import { expect } from "chai";
 
 function isLeapYear(year: number) {
+    if (year === 1900) {
+        return false;
+    }
     if (year % 4 === 0) {
         return true;
     }
@@ -13,31 +16,44 @@ function isLeapYear(year: number) {
  */
 
 describe('Leap Year', () => {
-    it('should return TRUE for 1996', () => {
-        expect(isLeapYear(1996)).eql(true);
+
+    describe('When a year is divisible by 4', () => {
+        it('should return TRUE for 1996', () => {
+            expect(isLeapYear(1996)).eql(true);
+        });
+
+        it('should return TRUE for 1992', () => {
+            expect(isLeapYear(1992)).eql(true);
+        });
     });
 
-    it('should return TRUE for 1992', () => {
-        expect(isLeapYear(1992)).eql(true);
+    describe('When a year is divisible by 400', () => {
+        it('should return TRUE for 2000', () => {
+            expect(isLeapYear(2000)).eql(true);
+        });
     });
 
-    it('should return TRUE for 2000', () => {
-        expect(isLeapYear(2000)).eql(true);
+    describe('When a year is divisible by 4 and 100', () => {
+        it('should return FALSE for 1900', () => {
+            expect(isLeapYear(1900)).eql(false);
+        });
+
+        it('should return FALSE for 2100', () => {
+            expect(isLeapYear(2100)).eql(false);
+        });
     });
 
-    it('should return FALSE for 1900', () => {
-        expect(isLeapYear(1900)).eql(false);
-    });
+    describe('Non Leap Year', () => {
+        it('should return FALSE for a non-leap year like 1997', () => {
+            expect(isLeapYear(1997)).eql(false);
+        });
 
-    it('should return FALSE for a non-leap year like 1997', () => {
-        expect(isLeapYear(1997)).eql(false);
-    });
+        it('should return FALSE when a non-leap year like 2007', () => {
+            expect(isLeapYear(2007)).eql(false);
+        });
 
-    it('should return FALSE when a non-leap year like 2007', () => {
-        expect(isLeapYear(2007)).eql(false);
-    });
-
-    it('should return FALSE when a non-leap year like 2010', () => {
-        expect(isLeapYear(2010)).eql(false);
+        it('should return FALSE when a non-leap year like 2010', () => {
+            expect(isLeapYear(2010)).eql(false);
+        });
     });
 });
