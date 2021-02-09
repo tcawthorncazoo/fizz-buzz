@@ -13,6 +13,13 @@ function fizzBuzz(input: number): string {
     return input.toString();
 }
 
+function checkFizzBuzzOutput(input: number, expected: string) {
+    it('should return "Fizz" when ' + input, () => {
+        expect(fizzBuzz(input)).eql(expected);
+    });
+}
+
+
 describe('Fizz Buzz on 09 Feb', () => {
     // describe('When the number is a multiple of 3', () => {
     //     it.each([3, 6, 9])('should return "Fizz"', (inputNumber) => {
@@ -21,17 +28,9 @@ describe('Fizz Buzz on 09 Feb', () => {
     // });
 
     describe('Multiples of 3 return the string "Fizz"', () => {
-        it('should return "Fizz" when 3', () => {
-            expect(fizzBuzz(3)).eql('Fizz');
-        });
-
-        it('should return "Fizz" when 6', () => {
-            expect(fizzBuzz(6)).eql('Fizz');
-        });
-
-        it('should return "Fizz" when 9', () => {
-            expect(fizzBuzz(9)).eql('Fizz');
-        });
+        checkFizzBuzzOutput(3, "Fizz");
+        checkFizzBuzzOutput(6, "Fizz");
+        checkFizzBuzzOutput(9, "Fizz");
     });
 
     describe('Multiples of 5 return the string "Buzz"', () => {
