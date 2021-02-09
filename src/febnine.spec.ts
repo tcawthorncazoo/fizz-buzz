@@ -1,7 +1,7 @@
 import { expect } from "chai";
 
 function fizzBuzz(input: number): string {
-    if (input === 15 || input === 30) {
+    if (input % 3 === 0 && input % 5 === 0) {
         return 'FizzBuzz';
     }
     if (input % 5 === 0) {
@@ -14,6 +14,12 @@ function fizzBuzz(input: number): string {
 }
 
 describe('Fizz Buzz on 09 Feb', () => {
+    // describe('When the number is a multiple of 3', () => {
+    //     it.each([3, 6, 9])('should return "Fizz"', (inputNumber) => {
+    //         expect(fizzBuzz(inputNumber)).eql('Fizz');
+    //     });
+    // });
+
     describe('Multiples of 3 return the string "Fizz"', () => {
         it('should return "Fizz" when 3', () => {
             expect(fizzBuzz(3)).eql('Fizz');
@@ -50,7 +56,7 @@ describe('Fizz Buzz on 09 Feb', () => {
         it('should return "FizzBuzz" when 30', () => {
             expect(fizzBuzz(30)).eql('FizzBuzz');
         });
-        
+
         it('should return "FizzBuzz" when 45', () => {
             expect(fizzBuzz(45)).eql('FizzBuzz');
         });
