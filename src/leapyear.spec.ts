@@ -1,7 +1,7 @@
 import { expect } from "chai";
 
 function isLeapYear(year: number) {
-    return true;
+    return null;
 }
 
 describe('Leap Year', () => {
