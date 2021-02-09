@@ -1,7 +1,7 @@
 import { expect } from "chai";
 
 function fizzBuzz(input: number): string {
-    if (input === 3 || input === 6) {
+    if (input % 3 === 0) {
         return 'Fizz';
     }
     return input.toString();
@@ -30,5 +30,9 @@ describe('Fizz Buzz on 09 Feb', () => {
 
     it('should return "Fizz" when 9', () => {
         expect(fizzBuzz(9)).eql('Fizz');
+    });
+
+    it('should return "Buzz" when 5', () => {
+        expect(fizzBuzz(5)).eql('Buzz');
     });
 });
